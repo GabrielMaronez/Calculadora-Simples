@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .fundo {
+            background-image:linear-gradient(45deg, rgb(255, 255, 255) ,rgb(82, 82, 82));
+            height: 947px;
+            color: white;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-align: center;
+            background-image: 
+                url(https://cdn.pixabay.com/photo/2016/12/29/18/44/background-1939128_1280.jpg);
+                background-repeat: repeat;
+                background-position: center;
+                
+
+        }
+        .calculadora {
+            position : absolute;
+            background-color: rgba(224, 224, 224, 0.5);
+            top: 53%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 30px;
+            padding: 15px;
+              
+        }
+
+        .botao {
+            width: 60px;
+            height: 60px;
+            font-size: 23px;
+            cursor : pointer;
+            background-color: rgb(31, 31, 31);
+            color: white;
+            margin: 2px;
+                   
+        }
+
+        .botao:hover {
+            background-color: rgb(99, 99, 99);
+        }
+
+        .assinatura {
+            font-family: monospace;
+
+            position: absolute;
+            font-size: 25px;
+            top: 90%;
+            left: 46%;
+        }
+
+        .logopanda {
+
+            width: 250px;
+            color: white;
+            top: 30%;
+            border-top: 20px black;
+            border-left: 20px black;
+            
+        }
+
+        .calculadoratitulo {
+            
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 23px;
+            font-style: inherit;
+            background-color: rgba(182, 48, 48, 0.7);
+            padding: 5px;
+            border-radius: 10px;
+            margin: 3px;
+            max-width: 255px;
+          
+        }
+
+        #resultado {
+            
+            max-width: 255px;
+            width: 255px;
+            height: 35px;
+            margin: 6px;
+            font-size: 23px;
+            background-color: rgb(0, 0, 0, 0.8);
+            border-radius: 10px;
+            text-align: right -1;
+            max-width: 300px; /* Limite maximo do texto*/
+            white-space: nowrap; /* Removendo quebra de linha */
+            overflow: hidden; /* Removendo a barra de rolagem */
+            
+
+        }
+
+        .log {
+
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 23px;
+            font-style: inherit;
+            background-color: rgba(182, 48, 48, 0.7);
+            padding: 5px;
+            border-radius: 10px;
+            margin: 3px;
+            max-width: 255px;
+
+
+        }
+    
+
+       
+        
+        
+        .retangulolog {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-style: inherit;
+            font-size: 25px;
+            color: white;
+            position: absolute;
+            top: 31%;
+            background-color: rgba(224, 224, 224, 0.5);
+            padding: 5px;
+            border-radius: 10px;
+            left: 65%;
+            height: 420px;
+            width: 200px;
+        } 
+        
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+    
+    <div class="fundo">
+        <img class="logopanda" src="https://freepngimg.com/thumb/bear/89757-giant-head-bear-pandas-baby-logo-panda.png"/>
+        <h1 class=" assinatura"> BY // PANDA</h1>
+        <div class="calculadora">
+            <h1 class="calculadoratitulo">CALCULADORA</h1>
+
+            <p id="resultado"></p>
+            
+            <table>
+                <tr>
+                    <td><button class="botao" onclick="clean()">C</button></td>
+                    <td><button class="botao" onclick="back()"><</button></td>
+                    <td><button class="botao" onclick="insert('/')">/</button></td>
+                    <td><button class="botao" onclick="insert('*')">X</button></td>
+                </tr>
+                <tr>
+                    <td ><button class="botao" onclick="insert('7')">7</button></td>
+                    <td ><button class="botao" onclick="insert('8')">8</button></td>
+                    <td ><button class="botao" onclick="insert('9')">9</button></td>
+                    <td><button class="botao"  onclick="insert('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="botao" onclick="insert('4')">4</button></td>
+                    <td><button class="botao" onclick="insert('5')">5</button></td>
+                    <td><button class="botao" onclick="insert('6')">6</button></td>
+                    <td><button class="botao" onclick="insert('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button class="botao"onclick="insert('1')" >1</button></td>
+                    <td><button class="botao"onclick="insert('2')" >2</button></td>
+                    <td><button class="botao"onclick="insert('3')">3</button></td>
+                    <td rowspan="2"><button class="botao" style="height: 121px;" onclick="calcular()">=</button></td>  
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="botao" style="width: 121px; " onclick="insert('0') ">0</button></td>
+                    <td><button class="botao" onclick="insert('.')">.</button></td>
+                    
+                  
+                </tr>
+
+
+
+            </table>
+        
+        </div>
+
+        <div> JAVASCRIPT+HTML+CSS</div>
+
+
+
+
+        <div class="retangulolog"> 
+
+            <h2 class="log"> LOG</h2>
+
+            <p id="historico"> </p>
+
+            <table>
+
+                <tr>
+                   
+                </tr>
+            </table>
+
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function insert(num)
+        {
+            var numero = document.getElementById('resultado').innerHTML
+            document.getElementById ('resultado') .innerHTML = numero + num
+
+
+        }
+
+        function clean()
+        {
+            document.getElementById('resultado').innerHTML = ""
+
+
+        }
+
+        function back()
+        {
+            var resultado = document.getElementById ('resultado').innerHTML
+            document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length -1)
+
+
+
+
+        }
+
+        function calcular()
+        {
+            var historico = [resultado]
+            var resultado = document.getElementById ('resultado').innerHTML
+
+        document.getElementById ('resultado')
+        
+            if (resultado)
+            {
+                document.getElementById('resultado').innerHTML = eval (resultado)
+                document.getElementById('historico').innerHTML = resultado
+                Array [document.getElementById('historico').innerHTML = resultado]
+        
+            }
+            else
+            {
+                document.getElementById('resultado').innerHTML = '0'
+                
+            }
+
+            let quadro = document.createElement("div");
+
+
+        
+        }
+
+        
+
+
+    
+        
+
+
+                
+
+
+
+    </script>
+    
+    
+</body>
+</html>
